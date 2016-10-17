@@ -1,5 +1,7 @@
 FROM dialonce/sensu
 
+RUN apk add wget ca-certificates && update-ca-certificates
+
 RUN gem install sensu-plugins-slack sensu-plugins-mailer
 
 RUN wget https://github.com/opower/sensu-metrics-relay/archive/master.tar.gz \
