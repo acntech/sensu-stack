@@ -1,18 +1,20 @@
 {
   "api": {
-    "host": "{{ .Env.SENSU_API_PORT_4567_TCP_ADDR }}",
-    "port": {{ .Env.SENSU_API_PORT_4567_TCP_PORT }},
-    "user": "{{ .Env.SENSU_API_ENV_API_USER }}",
-    "password":"{{ .Env.SENSU_API_ENV_API_PASS }}"
+    "host":"{{ .Env.SENSU_API_HOST }}",
+    "port":{{ .Env.SENSU_API_PORT }},
+    "user":"{{ .Env.SENSU_API_USER }}",
+    "password":"{{ .Env.SENSU_API_PASS }}"
   },
   "rabbitmq":{
-    "host":"{{ .Env.RABBITMQ_PORT_5672_TCP_ADDR }}",
-    "user":"{{ .Env.RABBITMQ_ENV_RABBITMQ_USER }}",
-    "password":"{{ .Env.RABBITMQ_ENV_RABBITMQ_PASS }}"
+    "host":"{{ .Env.RABBITMQ_HOST }}",
+    "port":{{ .Env.RABBITMQ_PORT }},
+    "user":"{{ .Env.RABBITMQ_USER }}",
+    "password":"{{ .Env.RABBITMQ_PASS }}"
   },
   "redis":{
-    "host":"{{ .Env.REDIS_PORT_6379_TCP_ADDR }}",
-    "password":"{{ .Env.REDIS_ENV_REDIS_PASS }}"
+    "host":"{{ .Env.REDIS_HOST }}",
+    "port":{{ .Env.REDIS_PORT }},
+    "password":"{{ .Env.REDIS_PASS }}"
   },
   "handlers":{
     "default":{

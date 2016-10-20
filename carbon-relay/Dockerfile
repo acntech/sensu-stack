@@ -12,6 +12,8 @@ RUN apk add --no-cache python && \
 
 COPY conf /etc/carbon/conf
 
+VOLUME /opt/graphite/storage
+
 CMD dockerize \
   -template /etc/carbon/conf/relay-rules.conf.tmpl:/opt/graphite/conf/relay-rules.conf \
   -template /etc/carbon/conf/carbon.conf.tmpl:/opt/graphite/conf/carbon.conf \

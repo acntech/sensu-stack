@@ -1,8 +1,8 @@
 {
   "relay": {
     "graphite": {
-      "host": "carbon-relay",
-      "port": 2013
+      "host": "{{ .Env.CARBON_RELAY_HOST }}",
+      "port": {{ .Env.CARBON_RELAY_PORT }}
     }
   }
 }

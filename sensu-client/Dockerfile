@@ -19,8 +19,9 @@ RUN apk add --no-cache git perl \
 COPY conf.d /etc/sensu/conf.d
 
 CMD dockerize \
-  -template /etc/sensu/conf.d/config.tmpl:/etc/sensu/conf.d/config.json \
-  -template /etc/sensu/conf.d/checks/docker.tmpl:/etc/sensu/conf.d/checks/docker.json \
-  -template /etc/sensu/conf.d/checks/rabbitmq.tmpl:/etc/sensu/conf.d/checks/rabbitmq.json \
-  -template /etc/sensu/conf.d/checks/redis.tmpl:/etc/sensu/conf.d/checks/redis.json \
-  sensu-client -d /etc/sensu/conf.d
+    -template /etc/sensu/conf.d/config.tmpl:/etc/sensu/conf.d/config.json \
+    -template /etc/sensu/conf.d/checks/docker.tmpl:/etc/sensu/conf.d/checks/docker.json \
+    -template /etc/sensu/conf.d/checks/rabbitmq.tmpl:/etc/sensu/conf.d/checks/rabbitmq.json \
+    -template /etc/sensu/conf.d/checks/redis.tmpl:/etc/sensu/conf.d/checks/redis.json \
+    -wait tcp://$RABBITMQ_HOST:$RABBITMQ_PORT \
+    sensu-client -d /etc/sensu/conf.d
