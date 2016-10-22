@@ -7,14 +7,11 @@
   },
   "rabbitmq":{
     "host":"{{ .Env.RABBITMQ_HOST }}",
-    "port":{{ .Env.RABBITMQ_PORT }},
-    "user":"{{ .Env.RABBITMQ_USER }}",
-    "password":"{{ .Env.RABBITMQ_PASS }}"
+    "port":{{ .Env.RABBITMQ_PORT }}
   },
   "redis":{
     "host":"{{ .Env.REDIS_HOST }}",
-    "port":{{ .Env.REDIS_PORT }},
-    "password":"{{ .Env.REDIS_PASS }}"
+    "port":{{ .Env.REDIS_PORT }}
   },
   "handlers":{
     "default":{

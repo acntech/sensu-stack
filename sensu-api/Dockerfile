@@ -10,4 +10,5 @@ COPY conf.d /etc/sensu/conf.d
 CMD dockerize -template /etc/sensu/conf.d/config.tmpl:/etc/sensu/conf.d/config.json \
 	-wait tcp://$RABBITMQ_HOST:$RABBITMQ_PORT \
 	-wait tcp://$REDIS_HOST:$REDIS_PORT \
+	-timeout 10s \
 	sensu-api -d /etc/sensu/conf.d

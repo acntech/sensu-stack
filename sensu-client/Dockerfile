@@ -24,4 +24,5 @@ CMD dockerize \
     -template /etc/sensu/conf.d/checks/rabbitmq.tmpl:/etc/sensu/conf.d/checks/rabbitmq.json \
     -template /etc/sensu/conf.d/checks/redis.tmpl:/etc/sensu/conf.d/checks/redis.json \
     -wait tcp://$RABBITMQ_HOST:$RABBITMQ_PORT \
+    -timeout 10s\
     sensu-client -d /etc/sensu/conf.d

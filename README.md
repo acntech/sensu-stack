@@ -13,6 +13,10 @@ Stack of Docker images for monitoring infrastructure and applications with Sensu
 - Logspout
 
 # Getting started
+Build image from ./sensu folder
+```bash
+$ docker build ./sensu --tag dialonce/sensu
+```
 
 Create Docker Volumes
 ```bash

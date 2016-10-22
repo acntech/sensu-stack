@@ -55,18 +55,18 @@ services:
       - '/var/run/docker.sock:/var/run/docker.sock'
 
   rabbitmq:
-    image: 'rabbitmq:3-management'
-    environment:
-      - RABBITMQ_DEFAULT_USER=ismar
-      - RABBITMQ_DEFAULT_PASS=slomic
+    image: rabbitmq:3-management
+    #environment:
+    #  - RABBITMQ_DEFAULT_USER=ismar
+    #  - RABBITMQ_DEFAULT_PASS=slomic
     ports:
       - '8080:15672'
     restart: always
 
   redis:
-    image: 'tutum/redis:latest'
-    environment:
-      - REDIS_PASS=slomic
+    image: redis:3.2.4
+    #environment:
+    #  - REDIS_PASS=slomic
     ports:
       - '6379:6379'
     restart: always
@@ -180,6 +180,20 @@ services:
       - '8000:8000'
     volumes:
       - sensu-graphite-application-data:/opt/graphite/storage
+
+  grafana:
+    image: 'grafana/grafana'
+    restart: always
+    ports:
+      - '8001:3000'
+
+  kibana:
+    image: kibana
+    restart: always
+    ports:
+      - '8002:5601'
+    links:
+      - elasticsearch
 
 volumes:
   sensu-graphite-application-data:
