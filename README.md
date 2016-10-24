@@ -1,16 +1,11 @@
 # sensu-stack
-Stack of Docker images for monitoring infrastructure and applications with Sensu, Graphite, Elasticsearch and Logstash
+Stack of Docker images for monitoring infrastructure and applications with Sensu
 
 # Stack overview
 - Sensu Server
 - Sensu API
 - Sensu Client
 - Uchiwa
-- Graphite Web
-- Carbon Cache
-- Carbon Relay
-- Elasticsearch
-- Logspout
 
 # Getting started
 Build image from ./sensu folder
@@ -20,9 +15,9 @@ $ docker build ./sensu --tag dialonce/sensu
 
 Create Docker Volumes
 ```bash
-$ docker volume create --name=sensu-graphite-application-data
-$ docker volume create --name=sensu-carbon-cache-application-data
-$ docker volume create --name=sensu-carbon-application-data
+$ docker volume create --name=sensu-graphite-application-data && \
+docker volume create --name=sensu-carbon-cache-application-data && \
+docker volume create --name=sensu-carbon-application-data
 ```
 
 Start all services with Docker Compose
