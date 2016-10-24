@@ -8,16 +8,14 @@ Stack of Docker images for monitoring infrastructure and applications with Sensu
 - Uchiwa
 
 # Getting started
-Build image from ./sensu folder
+Run with shell script
 ```bash
-$ docker build ./sensu --tag dialonce/sensu
+$ ./setup.sh
 ```
 
-Create Docker Volumes
+.. or do it manually. Build image from ./sensu folder
 ```bash
-$ docker volume create --name=sensu-graphite-application-data && \
-docker volume create --name=sensu-carbon-cache-application-data && \
-docker volume create --name=sensu-carbon-application-data
+$ docker build ./sensu --tag acntech/sensu
 ```
 
 Start all services with Docker Compose
